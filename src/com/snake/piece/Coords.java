@@ -26,4 +26,38 @@ public class Coords {
 	public String toString() {
 		return "[x=" + x + ", y=" + y + ", z=" + z + "]";
 	}
+
+	public Coords determineDirection(Coords previousPoint){
+		int x = this.getX() - previousPoint.getX();
+		int y = this.getY() - previousPoint.getY();
+		int z = this.getZ() - previousPoint.getZ();
+		
+		return new Coords(x, y, z);
+	}
+	
+	public Coords move(Coords direction){
+		int x = this.getX() + direction.getX();
+		int y = this.getY() + direction.getY();
+		int z = this.getZ() + direction.getZ();
+		
+		return new Coords(x, y, z);
+	}
+
+	public Coords transpose(){
+		int x = this.getZ();
+		int y = this.getX();
+		int z = this.getY();
+		
+		return new Coords(x, y, z);
+	}
+
+	public Coords inverse(){
+		int x = -1 * this.getZ();
+		int y = -1 * this.getX();
+		int z = -1 * this.getY();
+		
+		return new Coords(x, y, z);
+	}
+
+
 }

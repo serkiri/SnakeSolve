@@ -25,9 +25,13 @@ public enum PieceState {
 	public static PieceState firstState(){
 		return S0;
 	}
-	
+
+	public static PieceState lastState(){
+		return S3;
+	}
+
 	public boolean isLastState(){
-		return this==S3;
+		return this==lastState();
 	}
 
 }

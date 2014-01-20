@@ -4,29 +4,13 @@ public class StraightPiece extends AbstractPiece {
 
 	public StraightPiece(Coords currentPosition, Coords previousPosition) {
 		super(currentPosition, previousPosition);
+		pieceState = PieceState.lastState();
 	}
 
 	@Override
 	protected void calculateNextPosition() {
-		// pNext = 2p[current] - p[previous] 
+		Coords direction = currentPosition.determineDirection(previousPosition);
+		nextPosition = currentPosition.move(direction);
 	}
 	
-	public static void main(String[] args) {
-		System.out.println("start");
-		StraightPiece sp = new StraightPiece(new Coords(0,0,0), null);
-		System.out.println(sp);
-		System.out.println(sp.getPieceState().isLastState());
-		sp.rotate();
-		System.out.println(sp);
-		System.out.println(sp.getPieceState().isLastState());
-		sp.rotate();
-		System.out.println(sp);
-		System.out.println(sp.getPieceState().isLastState());
-		sp.rotate();
-		System.out.println(sp);
-		System.out.println(sp.getPieceState().isLastState());
-		sp.rotate();
-		System.out.println(sp);
-		System.out.println(sp.getPieceState().isLastState());
-	}
 }
