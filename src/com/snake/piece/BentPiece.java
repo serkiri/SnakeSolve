@@ -2,8 +2,8 @@ package com.snake.piece;
 
 public class BentPiece extends AbstractPiece {
 
-	public BentPiece(Coords currentPosition, Coords previousPosition) {
-		super(currentPosition, previousPosition);
+	public BentPiece(AbstractPiece previousPiece) {
+		super(previousPiece);
 	}
 
 	@Override

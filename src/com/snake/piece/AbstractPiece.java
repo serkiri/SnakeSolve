@@ -14,6 +14,10 @@ public abstract class AbstractPiece {
 		calculateNextPosition();
 	}
 	
+	public AbstractPiece(AbstractPiece previousPiece) {
+		this(previousPiece.getNextPosition(), previousPiece.getCurrentPosition());
+	}
+	
 	public void rotate(){
 		pieceState = pieceState.getNextState();
 		calculateNextPosition();
@@ -39,8 +43,8 @@ public abstract class AbstractPiece {
 
 	@Override
 	public String toString() {
-		return "Piece [currentPosition=" + currentPosition
-				+ ", pieceState=" + pieceState + "]";
+		return this.getClass().getSimpleName() + "{" + currentPosition
+				+ ", " + pieceState + "}";
 	}
 
 }

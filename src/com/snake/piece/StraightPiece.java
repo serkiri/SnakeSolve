@@ -2,8 +2,8 @@ package com.snake.piece;
 
 public class StraightPiece extends AbstractPiece {
 
-	public StraightPiece(Coords currentPosition, Coords previousPosition) {
-		super(currentPosition, previousPosition);
+	public StraightPiece(AbstractPiece previousPiece) {
+		super(previousPiece);
 		pieceState = PieceState.lastState();
 	}
 

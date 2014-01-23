@@ -9,6 +9,10 @@ public class TerminatedPiece extends AbstractPiece {
 	public TerminatedPiece(Coords currentPosition) {
 		this(currentPosition, null);
 	}
+	
+	public TerminatedPiece(AbstractPiece previousPiece) {
+		this(previousPiece.getNextPosition(), previousPiece.getCurrentPosition());
+	}	
 
 	public TerminatedPiece(Coords currentPosition, Coords previousPosition) {
 		super(currentPosition, previousPosition);
@@ -17,7 +21,7 @@ public class TerminatedPiece extends AbstractPiece {
 
 	@Override
 	protected void calculateNextPosition() {
-		if (nextPosition != null){
+		if (previousPosition == null){
 			Coords direction = new Coords(1, 0, 0);
 			nextPosition = currentPosition.move(direction);
 		} else {
