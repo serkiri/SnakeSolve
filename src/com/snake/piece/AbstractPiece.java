@@ -23,7 +23,9 @@ public abstract class AbstractPiece {
 		calculateNextPosition();
 	}
 
-	protected abstract void calculateNextPosition(); 
+	protected abstract void calculateNextPosition();
+	
+	protected abstract String getName();
 	
 	public Coords getCurrentPosition() {
 		return currentPosition;
@@ -43,7 +45,7 @@ public abstract class AbstractPiece {
 
 	@Override
 	public String toString() {
-		return this.getClass().getSimpleName() + "{" + currentPosition
+		return getName() + "{" + currentPosition
 				+ ", " + pieceState + "}";
 	}
 

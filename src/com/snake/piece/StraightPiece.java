@@ -13,4 +13,8 @@ public class StraightPiece extends AbstractPiece {
 		nextPosition = currentPosition.move(direction);
 	}
 	
+	@Override
+	protected String getName() {
+		return "SP";
+	}
 }

@@ -14,10 +14,15 @@ public class BentPiece extends AbstractPiece {
 		if (rollFactor % 2 == 1 ){
 			direction = direction.transpose();
 		}
-		if (rollFactor / 2 == 2 ){
+		if (rollFactor / 2 == 1 ){
 			direction = direction.inverse();
 		}
 		nextPosition = currentPosition.move(direction);
 	}
 	
+	@Override
+	protected String getName() {
+		return "BP";
+	}
+
 }

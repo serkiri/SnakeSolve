@@ -23,6 +23,34 @@ public class Coords {
 	}
 
 	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + x;
+		result = prime * result + y;
+		result = prime * result + z;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Coords other = (Coords) obj;
+		if (x != other.x)
+			return false;
+		if (y != other.y)
+			return false;
+		if (z != other.z)
+			return false;
+		return true;
+	}
+
+	@Override
 	public String toString() {
 		return "[x=" + x + ", y=" + y + ", z=" + z + "]";
 	}
@@ -52,9 +80,9 @@ public class Coords {
 	}
 
 	public Coords inverse(){
-		int x = -1 * this.getZ();
-		int y = -1 * this.getX();
-		int z = -1 * this.getY();
+		int x = -1 * this.getX();
+		int y = -1 * this.getY();
+		int z = -1 * this.getZ();
 		
 		return new Coords(x, y, z);
 	}

@@ -29,4 +29,9 @@ public class TerminatedPiece extends AbstractPiece {
 		}
 	}
 	
+	@Override
+	protected String getName() {
+		return "TP";
+	}
+
 }
