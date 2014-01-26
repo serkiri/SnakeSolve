@@ -149,13 +149,19 @@ public class SnakeSolver {
 		while(true){
 			if(isFreeSpaceLeft()){
 				placeNextPiece();
-				printSnake();
+//				printSnake();
 			}else{
 				solutionIsFound();
+				if(stepBackAndTurnIfPossible()){
+//					printSnake();
+					continue;
+				} else {
+					break;
+				}
 			}
 			if (isSelfBite()){
 				if(stepBackAndTurnIfPossible()){
-					printSnake();
+//					printSnake();
 					continue;
 				} else {
 					break;
@@ -163,7 +169,7 @@ public class SnakeSolver {
 			}
 			if (isTooWide()){
 				if(stepBackAndTurnIfPossible()){
-					printSnake();
+//					printSnake();
 					continue;
 				} else {
 					break;
@@ -177,15 +183,6 @@ public class SnakeSolver {
 	}
 	
 	public static void main(String[] args) {
-//		AbstractPiece p = new BentPiece(new StraightPiece( new TerminatedPiece()));
-//		System.out.println(p);
-//		System.out.println(p.getNextPosition());
-//		p.rotate();
-//		System.out.println(p.getNextPosition());
-//		p.rotate();
-//		System.out.println(p.getNextPosition());
-//		p.rotate();
-//		System.out.println(p.getNextPosition());
 		SnakeSolver solver = new SnakeSolver();
 		solver.solve();
 		
